@@ -5,10 +5,6 @@ from keras.layers import Flatten, Dense
 from keras.optimizers import SGD, RMSprop, Adagrad, Adadelta, Adam, Adamax, Nadam
 
 def get_my_CNN_model_architecture():
-    '''
-    The network should accept a 96x96 grayscale image as input, and it should output a vector with 30 entries,
-    corresponding to the predicted (horizontal and vertical) locations of 15 facial keypoints.
-    '''
     model = Sequential()
     model.add(Convolution2D(32, (5, 5), input_shape=(96,96,1), activation='relu'))
     model.add(MaxPooling2D(pool_size=(2, 2)))
